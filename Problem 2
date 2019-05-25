@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x,y,z,Asize, element[50];
+	cout << "Enter array size: ";
+	 cin >> Asize;
+	cout << "Enter the " << Asize << " numbers: \n\n"; 
+	for (x = 0; x < Asize; x++){
+	cin >> element[x];
+	}
+	cout << "\n\nInputted Data: ";
+	for (x = 0; x < Asize; x++){
+	cout << element[x] << " ";
+	}
+	for (x = 0; x < Asize; x++)
+	{
+	for (y = 0; y < Asize - x - 1; y++)
+		{
+		if (element[y] > element[y+1])
+		{
+		 z = element[y];
+		 element[y] = element[y+1];
+		 element[y+1] = z;
+		 }
+		}
+	}
+	cout << "\n\nSorted Data: ";
+	for (x = 0; x < Asize; x++)
+	{
+	cout << element[x] << " ";
+	}
+	return 0;
+}
